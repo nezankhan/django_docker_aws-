@@ -6,7 +6,7 @@ services:
             - .:/django
         ports:
             - 8000:8000
-        image: 702902291714.dkr.ecr.us-east-2.amazonaws.com/django_docker_aws
+        image: 702902291714.dkr.ecr.us-east-2.amazonaws.com/django_docker_aws:django_docker_aws_web
         container_name: django_container
         command: python django/manage.py runserver 0.0.0.0:8000
         depends_on:
@@ -14,7 +14,7 @@ services:
             - pg
 
     migration:
-        image: 702902291714.dkr.ecr.us-east-2.amazonaws.com/django_docker_aws
+        image: 702902291714.dkr.ecr.us-east-2.amazonaws.com/django_docker_aws:django_docker_aws_web
         command: python django/manage.py migrate
         depends_on:
             - pg
