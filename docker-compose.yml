@@ -14,7 +14,7 @@ services:
             - pg
 
     migration:
-        image: app:django
+        image: 702902291714.dkr.ecr.us-east-2.amazonaws.com/django_docker_aws
         command: python django/manage.py migrate
         depends_on:
             - pg
